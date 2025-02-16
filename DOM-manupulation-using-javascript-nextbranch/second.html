@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM part 2</title>
+  </head>
+  <body style="background-color: #212121; color: #fff"></body>
+  <script>
+    const div = document.createElement("div");
+    // Creating a new element with the text
+    console.log(div);
+    div.className = "main"; //choosing the className for the element
+
+    div.id = Math.round(Math.random() * 10 + 1); //chosing the id for the element
+    div.setAttribute("title", "generated title");
+    div.style.backgroundColor = "green";
+    div.style.padding = "12px";
+    //div.innerHTML = "whats up buddy ?";
+    const addText = document.createTextNode("whats up buddy?");//creating a Text Node and adding it to our div        
+    div.appendChild(addText);  //   adding the Text node to the created div     
+    document.body.appendChild(div);//adding the newly created div to the body of HTML   
+  </script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EDIT and REMOVE elements in DOM</title>
+  </head>
+  <body style="color: wheat; background-color: black">
+    <ul class="language">
+      <li>javascript</li>
+    </ul>
+    <ol class="own_practice">
+      <li>japanese</li>
+    </ol>
+  </body>
+  <script>
+    //BASIC APPROACH TO ADD ELEMENTS TO THE CLASS
+    function addLanguage(langName) {
+      const li = document.createElement("li");
+      li.innerHTML = `${langName}`;
+      document.querySelector(".language").appendChild(li);
+    }
+    addLanguage("python");
+    addLanguage("typescript");
+
+    // EASY APPROACH TO ADD NEW ELEMENTS TO THE CLASS
+    function addlang(newlang) {
+      const li = document.createElement("li");
+      li.appendChild(document.createTextNode(newlang));
+      document.querySelector(".own_practice").appendChild(li);
+    }
+    addlang("jinglebell");
+    addlang("jinglebell");
+
+    //EDIT OR REPLACE THE ELEMENT WITH NEW VALUE
+    const newlang = document.querySelector("li:nth-child(3)");
+    console.log(newlang);
+    const newli = document.createElement("li");
+    newli.textContent = "java";
+    newlang.replaceWith(newli);
+
+    //EDIT PART2
+    const firstlang = document.querySelector("li:first-child");
+    firstlang.outerHTML = "<li>NodeJs</li>"; //  it will replace the whole element with a new one
+
+    // REMOVE THE ELEMENT FROM CLASS
+    // const removelang = document.querySelector("li:first-child");
+    // removelang.remove();
+  </script>
+</html>

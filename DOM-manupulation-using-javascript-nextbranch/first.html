@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM learning</title>
+  </head>
+  <link rel="stylesheet" href="thei.css" />
+  <script src="new.js"></script>
+
+  <body class="whole" style="color: aqua">
+    <div id="first_heading" class="heading_part">
+      <h1>learning DOM manupulation from now</h1>
+      <p>
+        this is the paragraph ... Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Velit quo aspernaturedsal repudiandae, possimus, hic
+        maxe.
+      </p>
+    </div>
+    <div class="parent">
+      <!--there is some class-->
+      <div class="day">Sunday</div>
+      <div class="day">Monday</div>
+      <div class="day">Tuesday</div>
+      <div class="day">wednesday</div>
+      <div class="day">thursday</div>
+    </div>
+  </body>
+  <script>
+    const first_name = document.querySelector(".parent");
+    console.log(first_name.children); //this will give us all child nodes of parent
+    console.log(first_name);
+    for (let i = 0; i < first_name.children.length; i++) {
+      console.log(first_name.children[i].innerHTML); //this will print textcontent of each child node
+    }
+
+    first_name.children[2].style.color = "orange";
+    //console.log(first_name.firstElementChild); //this will return the first element child of parent
+    //console.log(first_name.lastElementChild); //this will return the last element child of parent
+
+    const dayOne = document.querySelector(".day");
+    //console.log(dayOne);
+    //console.log(dayOne.parentElement); //this will return the parent of that particular child
+    //console.log(dayOne.nextElementSibling); //this will return the next sibling of that   particular child
+    console.log("NODES:", first_name.childNodes); //this will return all types of noedes
+  </script>
+</html>
